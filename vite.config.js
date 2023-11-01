@@ -1,15 +1,7 @@
 import { defineConfig } from "vite";
-import virtual from "@rollup/plugin-virtual";
 
-const svgContent = require("!raw-loader!./logo.svg");
-console.log("SVG Content:", svgContent);
+import svgLoader from "vite-svg-loader";
 
 export default defineConfig({
-	plugins: [
-		virtual({
-			"./logo.svg": `
-        export default ${JSON.stringify(svgContent)};
-      `,
-		}),
-	],
+	plugins: [svgLoader()],
 });

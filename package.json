@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "vite": "^4.5.0",
-    "vite-plugin-svg": "^0.7.0"
+    "vite-svg-loader": "^4.0.0"
   },
   "dependencies": {
     "noisejs": "^2.1.0",

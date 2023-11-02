@@ -18,5 +18,13 @@
 
 - [x] adding `dtran` logo at the right corner of the canvas
 - [x] flycontrols
-  - [ ] finetone flycontrols, display key control on the screen
+  - [ ] finetone flycontrols
+  - [ ] key control helper on the screen
   - [ ] add mouse control as orbit control, rotate around the terrain
+- [ ] adding stats js to benchmark
+- [ ] adding gui debug control
+  - [ ] noise frequency
+  - [ ] noise function
+  - [ ] camera position
+  - [ ] switch between orbitcontrol and flycontrol
+  - [ ] terrain dimesion

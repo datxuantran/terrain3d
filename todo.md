@@ -28,3 +28,4 @@
   - [ ] camera position
   - [ ] switch between orbitcontrol and flycontrol
   - [ ] terrain dimesion
+- [ ] reset key combo, enter to reset camera to initial position

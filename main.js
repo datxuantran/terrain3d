@@ -131,24 +131,25 @@ var camera = new THREE.PerspectiveCamera(
 	0.1,
 	1000
 );
-camera.position.set(0, -1, 1.5);
+camera.position.set(0, 0, 1.5);
 camera.lookAt(new THREE.Vector3(0, 0, 0)); // Look at the center of the terrain
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-// var controls = new FlyControls(camera, renderer.domElement);
-// controls.movementSpeed = 0.1; // Adjust the movement speed to your preference
-// controls.rollSpeed = Math.PI / 24; //
-// controls.dragToLook = true;
-// controls.autoForward = false;
+var controls = new FlyControls(camera, renderer.domElement);
+controls.domElement = renderer.domElement;
+controls.movementSpeed = 1; // Adjust the movement speed to your preference
+controls.rollSpeed = Math.PI / 24; //
+controls.dragToLook = true;
+controls.autoForward = false;
 
-var controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.dampingFactor = 0.25;
-controls.screenSpacePanning = false;
-controls.maxPolarAngle = Math.PI;
+// var controls = new OrbitControls(camera, renderer.domElement);
+// controls.enableDamping = true;
+// controls.dampingFactor = 0.25;
+// controls.screenSpacePanning = false;
+// controls.maxPolarAngle = Math.PI;
 
 var customMaterial = new THREE.ShaderMaterial({
 	side: THREE.DoubleSide,
@@ -286,9 +287,13 @@ renderer.domElement.addEventListener("mouseout", () => {
 	infoDiv.style.display = "none";
 });
 
+var clock = new THREE.Clock();
 function animate() {
 	requestAnimationFrame(animate);
-	controls.update();
+
+	var delta = clock.getDelta();
+	controls.update(delta); // Update controls in each animation frame to handle user input
+
 	renderer.render(scene, camera);
 }
 

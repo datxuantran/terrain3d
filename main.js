@@ -1,5 +1,4 @@
 import * as THREE from "three";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { FlyControls } from "three/addons/controls/FlyControls.js";
 import { Noise } from "noisejs";
 import getColor from "./colorGradient";
@@ -144,12 +143,6 @@ controls.movementSpeed = 1; // Adjust the movement speed to your preference
 controls.rollSpeed = Math.PI / 8; //
 controls.dragToLook = true;
 controls.autoForward = false;
-
-// var controls = new OrbitControls(camera, renderer.domElement);
-// controls.enableDamping = true;
-// controls.dampingFactor = 0.25;
-// controls.screenSpacePanning = false;
-// controls.maxPolarAngle = Math.PI;
 
 var customMaterial = new THREE.ShaderMaterial({
 	side: THREE.DoubleSide,

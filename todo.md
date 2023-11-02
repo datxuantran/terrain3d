@@ -17,4 +17,6 @@
   - [x] when mouse hover over the terrain, display the at the mouse position on the surface of the terrain a white point
 
 - [x] adding `dtran` logo at the right corner of the canvas
-- [ ] fly control
+- [x] flycontrols
+  - [ ] finetone flycontrols, display key control on the screen
+  - [ ] add mouse control as orbit control, rotate around the terrain

@@ -141,7 +141,7 @@ document.body.appendChild(renderer.domElement);
 var controls = new FlyControls(camera, renderer.domElement);
 controls.domElement = renderer.domElement;
 controls.movementSpeed = 1; // Adjust the movement speed to your preference
-controls.rollSpeed = Math.PI / 24; //
+controls.rollSpeed = Math.PI / 8; //
 controls.dragToLook = true;
 controls.autoForward = false;
 

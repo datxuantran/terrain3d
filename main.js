@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { FlyControls } from "three/addons/controls/FlyControls.js";
 import { Noise } from "noisejs";
 import getColor from "./colorGradient";
 import logoPng from "./path34436.png";
@@ -130,11 +131,18 @@ var camera = new THREE.PerspectiveCamera(
 	0.1,
 	1000
 );
-camera.position.set(0, 0, 1.5);
+camera.position.set(0, -1, 1.5);
+camera.lookAt(new THREE.Vector3(0, 0, 0)); // Look at the center of the terrain
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
+
+// var controls = new FlyControls(camera, renderer.domElement);
+// controls.movementSpeed = 0.1; // Adjust the movement speed to your preference
+// controls.rollSpeed = Math.PI / 24; //
+// controls.dragToLook = true;
+// controls.autoForward = false;
 
 var controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
